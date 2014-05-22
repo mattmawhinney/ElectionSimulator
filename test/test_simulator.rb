@@ -24,17 +24,17 @@ module SimulatorTests
 
   
 		puts
-		my_simulation.create
+		my_simulation.send(:create)
 		puts
-		my_simulation.list 
+		my_simulation.send(:list) 
     puts
-		my_simulation.create
+		my_simulation.send(:create)
 		puts
-		my_simulation.list
+		my_simulation.send(:list)
 		puts
-		my_simulation.create
+		my_simulation.send(:create)
 		puts
-		my_simulation.list
+		my_simulation.send(:list)
 	end 
 
 	def test_update
@@ -46,23 +46,23 @@ module SimulatorTests
 		Politician.new("Joe Garcia", "Republican")
 		Politician.new("Elaine Kagan", "Democrat")
 		Politician.new("Mike Koch", "Republican")
-
+		my_simulation.send(:update)
 
 		
  		
  		puts
     puts "Lets see all our Voters in list format"
-    puts my_simulation.list
+    puts my_simulation.send(:list)
     puts
 		# puts "Now as an array of objects"
 		# p Voter.voters_created
-		my_simulation.update
+		my_simulation.send(:update)
 		puts
-		puts my_simulation.list
+		puts my_simulation.send(:list)
 		puts
-		my_simulation.update
+		my_simulation.send(:update)
 		puts
-		puts my_simulation.list
+		puts my_simulation.send(:list)
 
 
 	end
