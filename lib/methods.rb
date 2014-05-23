@@ -140,6 +140,15 @@ class Simulation
     main_menu
   end
 
+  def voted_reset
+    all_voters = Voter.voters_created
+      all_voters.each do |voter|
+        voter.voted = false
+      end 
+  
+
+  end
+
   #working 
   def update
   	puts
@@ -275,7 +284,8 @@ class Simulation
     puts
     puts "\t#{who_voted_for_whom}"
 
-    Process.exit
+    voted_reset
+    main_menu
   end
     
   	
@@ -371,7 +381,7 @@ end
 
 class Politician < Voter
 
-	attr_accessor :party
+	attr_accessor :party, :voted
 	
 	def initialize(name,party) 
 		@name = name 
